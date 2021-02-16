@@ -1,7 +1,7 @@
 import { STORE_USERS, SELECT_USER } from '../actions/actionsType';
 
 const INITIAL_STATE = {
-  userselected: null, 
+  userselected: {}, 
   allUsers: []
 };
 
@@ -12,7 +12,7 @@ const usersReducer = (state = INITIAL_STATE, action) => {
   }
 
   if (action.type === SELECT_USER) {
-    return { ...state,  userselected :   action.payload   };
+    return { ...state,  userselected :  state.allUsers.filter(user=> user.id === action.payload )     };
     // overrides  state
   }
 

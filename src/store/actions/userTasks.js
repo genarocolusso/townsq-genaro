@@ -16,8 +16,8 @@ export const getallusers = () => dispatch =>
       });
     });
 
-export const selectuser = data => dispatch =>
+export const selectuser = userid => dispatch =>
   dispatch({
     type: SELECT_USER,
-    payload: data,
+    payload: userid,
   });
